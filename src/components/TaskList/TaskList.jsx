@@ -9,8 +9,6 @@ import {List,Item} from './TaskList.styled';
 
 const getVisibleTasks = (tasks,statusFilter) => {
 
- 
-
   switch(statusFilter) {
 
     case(statusFilters.active): 
