@@ -8,8 +8,12 @@ display: inline-flex;
   border: none;
   font: inherit;
   cursor: pointer;
-  background-color: ${props => (props.selected ? '#e2e5e8' : '#1976d2' )}  
-  color: ${props => (props.selected ? "#fff" : 'inherit')};
+  background-color: ${props => {
+     
+     return props.selected ?  '#1976d2': '#e2e5e8';
+
+  } }; 
+  // color: ${props => (props.selected ? "#fff" : 'inherit')};
 
  
   &:hover {
