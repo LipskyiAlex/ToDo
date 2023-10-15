@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'; // импортируем Хук
-import { setStatusFilter } from 'redux/actions'; // Импортируем действие
+import { setStatusFilter } from 'redux/filterSlice'; // Импортируем действие
 
-import { getStatusFilter } from 'redux/selectors';
+import { selectStatusFilter } from 'redux/selectors';
 import { statusFilters } from 'redux/constants'; // Импортируем объект значений фильтра
 
 import { Button } from '../Button/Button';
@@ -10,10 +10,11 @@ import { Wrapper } from './StatusFilter.styled';
 export const StatusFilter = () => {
   const dispatch = useDispatch();
 
-  const filter = useSelector(getStatusFilter);
+  const filter = useSelector(selectStatusFilter);
 
   const handleFilterChange = filter => dispatch(setStatusFilter(filter));
 
+  
   return (
     <Wrapper>
       <Button
