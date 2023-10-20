@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { addTask } from 'redux/tasks/operations';
 import { ButtonComponent } from '../Button/Button';
 import { Form, Input } from './TaskForm.styled';
-import { Notify } from 'notiflix';
+import Notiflix from 'notiflix';
 export const TaskForm = () => {
   const dispatch = useDispatch();
 
@@ -14,7 +14,7 @@ export const TaskForm = () => {
 
     if (!task.trim()) {
 
-      return Notify.failure('Task cant be empty!');
+      return Notiflix.Notify.failure('Task cant be empty!');
     
     }
     dispatch(addTask(task));
