@@ -1,14 +1,15 @@
 import { Btn } from "./Button.styled";
 
 
-export const Button = ({
+
+export const ButtonComponent = ({
   selected = false,
   type = 'button',
   children,
   ...otherProps
 }) => {
   return (
-    <Btn type={type} selected={selected} {...otherProps}>
+    <Btn variant="contained" type={type} selected={selected} {...otherProps}>
       {children}
     </Btn>
   );

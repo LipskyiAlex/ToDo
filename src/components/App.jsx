@@ -3,10 +3,10 @@ import { AppBar } from './AppBar/AppBar';
 import { TaskForm } from './TaskForm/TaskForm';
 import { TaskList } from './TaskList/TaskList';
 
-import { selectIsLoading,selectError} from 'redux/selectors';
+import { selectIsLoading,selectError} from 'redux/tasks/selectors';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchTasks } from 'redux/operations';
+import { fetchTasks } from 'redux/tasks/operations';
 
 
 export const App = () => {
@@ -28,9 +28,3 @@ export const App = () => {
     </Layout>
   );
 };
-
-// export const App = () => {
-//   return (
-//
-//   );
-// };
