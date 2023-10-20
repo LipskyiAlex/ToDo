@@ -16,9 +16,9 @@ const filtersInitialState = {
 
         setStatusFilter: {
 
-            reducer(state,action) {
+            reducer(state,{payload}) {
 
-                state.status = action.payload
+                state.status = payload
             },
         },
     },

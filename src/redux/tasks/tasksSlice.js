@@ -37,73 +37,35 @@ const tasksSlice = createSlice({
     [toggleCompleted.rejected]: handleRejected,
 
 
-    [fetchTasks.fulfilled](state, action) {
+    [fetchTasks.fulfilled](state, {payload}) {
       state.isLoading = false;
       state.error = null;
-      state.items = action.payload;
+      state.items = payload;
     },
     
-    [addTask.fulfilled](state, action) {
+    [addTask.fulfilled](state, {payload}) {
       state.isLoading = false;
       state.error = null;
-      state.items.push(action.payload);
+      state.items.push(payload);
     },
     
-    [deleteTask.fulfilled](state, action) {
+    [deleteTask.fulfilled](state, {payload}) {
       state.isLoading = false;
       state.error = null;
 
-      const index = state.items.findIndex(task => task.id === action.payload.id);
+      const index = state.items.findIndex(task => task.id === payload.id);
       state.items.splice(index, 1);
     },
     
-    [toggleCompleted.fulfilled](state, action) {
+    [toggleCompleted.fulfilled](state, {payload}) {
       state.isLoading = false;
       state.error = null;
       const index = state.items.findIndex(
-        task => task.id === action.payload.id
+        task => task.id === payload.id
       );
-      state.items.splice(index, 1, action.payload);
+      state.items.splice(index, 1,payload);
     },
 
-    
-    // addTask: {
-
-    //     reducer(state,action) {
-
-    //         state.push(action.payload)
-    //     },
-    //     prepare(text) {
-
-    //         return {
-
-    //             payload: {
-
-    //                 text,
-    //                 id: nanoid(),
-    //                 completed:false
-    //             },
-    //         }
-    //     },
-    // },
-
-    // deleteTask: {
-
-    //     reducer(state,action) {
-
-    //         const index = state.findIndex(task => task.id === action.payload);
-    //         state.splice(index,1);
-    //     }
-    // },
-
-    // toggleCompleted(state, action) {
-    //     for (const task of state) {
-    //       if (task.id === action.payload) {
-    //         task.completed = !task.completed;
-    //         break;
-    //       }
-    //     }
-    //   },
   },
 });
 

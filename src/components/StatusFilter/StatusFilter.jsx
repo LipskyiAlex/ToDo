@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux'; // импортируем Хук
-import { setStatusFilter } from 'redux/filterSlice'; // Импортируем действие
+import { setStatusFilter } from 'redux/tasks/filterSlice'; // Импортируем действие
 
-import { selectStatusFilter } from 'redux/selectors';
-import { statusFilters } from 'redux/constants'; // Импортируем объект значений фильтра
+import { selectStatusFilter } from 'redux/tasks/selectors';
+import { statusFilters } from 'redux/tasks/constants'; // Импортируем объект значений фильтра
 
-import { Button } from '../Button/Button';
+import { ButtonComponent } from '../Button/Button';
 import { Wrapper } from './StatusFilter.styled';
 
 export const StatusFilter = () => {
@@ -17,24 +17,24 @@ export const StatusFilter = () => {
   
   return (
     <Wrapper>
-      <Button
+      <ButtonComponent
         selected={filter === statusFilters.all}
         onClick={() => handleFilterChange(statusFilters.all)}
       >
         All
-      </Button>
-      <Button
+      </ButtonComponent>
+      <ButtonComponent
         selected={filter === statusFilters.active}
         onClick={() => handleFilterChange(statusFilters.active)}
       >
         Active
-      </Button>
-      <Button
+      </ButtonComponent>
+      <ButtonComponent
         selected={filter === statusFilters.completed}
         onClick={() => handleFilterChange(statusFilters.completed)}
       >
         Completed
-      </Button>
+      </ButtonComponent>
     </Wrapper>
   );
 };

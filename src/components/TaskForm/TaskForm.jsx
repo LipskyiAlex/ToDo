@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { addTask } from 'redux/operations';
-import { Button } from '../Button/Button';
+import { addTask } from 'redux/tasks/operations';
+import { ButtonComponent } from '../Button/Button';
 import { Form, Input } from './TaskForm.styled';
 import { Notify } from 'notiflix';
 export const TaskForm = () => {
@@ -24,7 +24,7 @@ export const TaskForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Input type="text" name="text" placeholder="Enter task text..." />
-      <Button type="submit">Add task</Button>
+      <ButtonComponent type="submit">Add task</ButtonComponent>
     </Form>
   );
 };
