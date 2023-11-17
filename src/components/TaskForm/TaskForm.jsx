@@ -3,6 +3,7 @@ import { addTask } from 'redux/tasks/operations';
 import { ButtonComponent } from '../Button/Button';
 import { Form, Input } from './TaskForm.styled';
 import Notiflix from 'notiflix';
+import { Button } from '@mui/material';
 export const TaskForm = () => {
   const dispatch = useDispatch();
 
@@ -24,7 +25,7 @@ export const TaskForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Input type="text" name="text" placeholder="Enter task text..." />
-      <ButtonComponent type="submit">Add task</ButtonComponent>
+      <Button type="submit" variant='contained'>Add task</Button>
     </Form>
   );
 };
