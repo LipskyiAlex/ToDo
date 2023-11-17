@@ -6,7 +6,6 @@ const filtersInitialState = {
     status: statusFilters.all,
   };
 
-  
   const filterSlice = createSlice({
 
     name:'filters',
@@ -26,6 +25,6 @@ const filtersInitialState = {
 
   export const {setStatusFilter} = filterSlice.actions;
 
-  export const filtersReducer =filterSlice.reducer;
+  export const filtersReducer = filterSlice.reducer;
   
 
